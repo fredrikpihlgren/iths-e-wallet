@@ -10,6 +10,14 @@ new Vue({
   store,
   data: function(){
     return {
+      dValues: {
+          def_id: "123",
+          def_holder: "Default Name",
+          def_vendor: "",
+          def_number: "XXXXYYYYZZZZFFFF",
+          def_validMonth: "8",
+          def_validDay: "9"
+      },
       wallet: [
         {
           id: "432984728397",
@@ -25,7 +33,7 @@ new Vue({
           vendor: "ninja",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
-          validDay: "5"
+          validDay: "8"
         },
         {
           id: "432984728397",
@@ -41,7 +49,7 @@ new Vue({
           vendor: "evil",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
-          validDay: "5"
+          validDay: "22"
         },
       ]
     }

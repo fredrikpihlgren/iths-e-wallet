@@ -4,7 +4,13 @@
 <ul>
   <li v-for="item in this.$root.$data.wallet" :key="item.id">
     {{ item.id }} - {{ item.holder }}
-    <ShowCard v-bind:vendor="item.vendor" />
+      <ShowCard
+      v-bind:vendor="item.vendor"
+      v-bind:cnumber="item.number"
+      v-bind:name="item.holder"
+      v-bind:month="item.validMonth"
+      v-bind:year="item.validDay"
+      />
   </li>
 </ul>
 

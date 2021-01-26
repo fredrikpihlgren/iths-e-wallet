@@ -2,7 +2,13 @@
   <div>
     <TopText rubrik="ADD A NEW BANK CARD" rubriksmall="NEW CARD" />
 
-    <ShowCard />
+    <ShowCard
+      v-bind:vendor="this.$root.$data.dValues.def_vendor"
+      v-bind:name="this.$root.$data.dValues.def_holder"
+      v-bind:cnumber="this.$root.$data.dValues.def_number"
+      v-bind:month="this.$root.$data.dValues.def_validMonth"
+      v-bind:year="this.$root.$data.dValues.def_validDay"
+    />
     <CardForm />
   </div>
 </template>

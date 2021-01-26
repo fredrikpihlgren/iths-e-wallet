@@ -1,8 +1,8 @@
 <template>
-  <div class="cardStyle" v-bind:class="computedClass" :click="test"> <!-- v-on:click="greet" -->
+  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cnumber)"> <!-- v-on:click="greet" -->
     <div></div>
-    <div>{{cardnumber.substring(0,4) +" "+ cardnumber.substring(4,8) +" "+ cardnumber.substring(8,12) +" "+ cardnumber.substring(12,16)}}</div>
-    <div><p>CARDHOLDER NAME</p><p>{{firstname +" "+ lastname}}</p></div>
+    <div>{{cardnumberSplit}}</div>
+    <div><p>CARDHOLDER NAME</p><p>{{name}}</p></div>
     <div><p>VALID THRU</p><p>{{month +"/"+ year}}</p></div>
   </div>
 </template>
@@ -15,12 +15,16 @@ export default {
         cardnumber: "1234567891011123",
         firstname: "John",
         lastname: "Doe",
-        month: 12,
-        year: 22,
+        //month: 12,
+        //year: 22,
         //vendor: "",
   }
   },
   computed: {
+    cardnumberSplit: function () {
+      return this.cnumber.substring(0,4) +" "+ this.cnumber.substring(4,8) +" "+ this.cnumber.substring(8,12) +" "+ this.cnumber.substring(12,16)
+      //{{cardnumber.substring(0,4) +" "+ cardnumber.substring(4,8) +" "+ cardnumber.substring(8,12) +" "+ cardnumber.substring(12,16)}}
+    },
     computedClass() {
       let className = '';
       switch(this.vendor) {
@@ -34,10 +38,15 @@ export default {
   },
   props: {
     vendor: String,
+    name: String,
+    cnumber: String,
+    month: String,
+    year: String,
   },
   methods: {
     test(inp) {
-      console.log(inp);
+      alert(inp);
+      //console.log(inp);
     },
     /*
     greet: function() {
