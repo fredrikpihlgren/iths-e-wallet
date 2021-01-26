@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <!--<img alt="Vue logo" src="../assets/logo.png" />-->
+    <TopText rubrik="E-WALLET" rubriksmall="ACTIVE CARD" />
+
+    <ShowCard vendor="" />
+    <CardStack />
+  <router-link to="/newcard" class="routerButton">ADD A NEW CARD</router-link>
   </div>
 </template>
 
+
 <script>
+
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import TopText from "@/components/TopText.vue";
+import ShowCard from "@/components/CardComp.vue";
+import CardStack from "@/components/CardStack.vue";
 
 export default {
-  name: "Home",
   components: {
-    HelloWorld
+    TopText,
+    ShowCard,
+    CardStack,
   }
 };
+
 </script>
