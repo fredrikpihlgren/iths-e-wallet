@@ -13,7 +13,7 @@ export default {
 
   methods: {
     addCard() {
-      //router.push('home')
+      this.$router.push('/')
     }
   }
 

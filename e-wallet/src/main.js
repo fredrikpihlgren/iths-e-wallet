@@ -21,7 +21,7 @@ new Vue({
         },
         {
           id: "432984728397",
-          holder: "Eric Draven",
+          holder: "Spöket Laban",
           vendor: "ninja",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
@@ -31,6 +31,14 @@ new Vue({
           id: "432984728397",
           holder: "Vladimir Putin",
           vendor: "blockchain",
+          number: "XXXXYYYYZZZZFFFF",
+          validMonth: "12",
+          validDay: "5"
+        },
+        {
+          id: "432984728397",
+          holder: "Patrick Bateman",
+          vendor: "evil",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
           validDay: "5"
