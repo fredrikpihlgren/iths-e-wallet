@@ -16,6 +16,7 @@
 </template>
 
 
+
 <script>
 
 // @ is an alias to /src
@@ -28,6 +29,13 @@ export default {
     TopText,
     ShowCard,
     CardStack,
+  },
+  methods: {
+    resetme() {
+      //if () {
+      //this.$root.$data.dValues.def_vendor=this.$root.$data.wallet[0];
+      //}
+    }
   },
 };
 

@@ -93,6 +93,10 @@ margin-right:auto;
 .topCard {
 margin-top:80px;
 }
+.cardMargins {
+  margin-top:15px;
+  margin-bottom:15px;
+}
 
 .routerButton {
   background-color:white;
@@ -105,6 +109,8 @@ margin-top:80px;
   display:block;
   margin-left:auto;
   margin-right:auto;
+  margin-top:15px;
+  margin-bottom:15px;
   font-weight:900;
   font-size:30px;
   cursor:pointer;

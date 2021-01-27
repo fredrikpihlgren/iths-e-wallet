@@ -16,9 +16,10 @@ new Vue({
           def_vendor: "",
           def_number: "XXXXYYYYZZZZFFFF",
           def_validMonth: "8",
-          def_validDay: "9"
+          def_validDay: "9",
       },
       wallet: [
+        /*
         {
           id: "432984728397",
           holder: "Bulba Saur",
@@ -35,6 +36,7 @@ new Vue({
           validMonth: "12",
           validDay: "8"
         },
+        
         {
           id: "432984728397",
           holder: "Vladimir Putin",
@@ -51,6 +53,7 @@ new Vue({
           validMonth: "12",
           validDay: "22"
         },
+        */
       ]
     }
   },
