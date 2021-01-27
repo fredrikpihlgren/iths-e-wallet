@@ -9,6 +9,7 @@
       v-bind:name="item.holder"
       v-bind:month="item.validMonth"
       v-bind:year="item.validDay"
+      v-bind:cardId="item.id"
       />
 
         <!--<ShowCard v-for="item in wallet" :key="item.length" />

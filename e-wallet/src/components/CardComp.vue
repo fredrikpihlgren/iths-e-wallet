@@ -1,5 +1,5 @@
 <template>
-  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cnumber)"> <!-- v-on:click="greet" -->
+  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)"> <!-- v-on:click="greet" -->
     <div></div>
     <div>{{cardnumberSplit}}</div>
     <div><p>CARDHOLDER NAME</p><p>{{name}}</p></div>
@@ -42,10 +42,18 @@ export default {
     cnumber: String,
     month: String,
     year: String,
+    cardId: String,
   },
   methods: {
     test(inp) {
       alert(inp);
+      this.$root.$data.currentCard=inp;
+      for (let i=0;i<this.$root.$data.wallet.length;i++) {
+          if (inp == this.$root.$data.wallet[i].id) {
+              this.$root.$data.dValues.def_holder=this.$root.$data.wallet[i].holder;
+          }
+          
+      }
       //console.log(inp);
     },
     /*

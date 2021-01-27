@@ -10,6 +10,7 @@ new Vue({
   store,
   data: function(){
     return {
+      currentCard: "123",
       dValues: {
           def_id: "123",
           def_holder: "Default Name",
@@ -19,9 +20,8 @@ new Vue({
           def_validDay: "9",
       },
       wallet: [
-        /*
         {
-          id: "432984728397",
+          id: "567",
           holder: "Bulba Saur",
           vendor: "bitcoin",
           number: "XXXXYYYYZZZZFFFF",
@@ -29,14 +29,14 @@ new Vue({
           validDay: "5"
         },
         {
-          id: "432984728397",
+          id: "897",
           holder: "Spöket Laban",
           vendor: "ninja",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
           validDay: "8"
         },
-        
+        /*
         {
           id: "432984728397",
           holder: "Vladimir Putin",
