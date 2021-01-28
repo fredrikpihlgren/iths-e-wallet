@@ -26,7 +26,7 @@ export default {
     TopText,
     ShowCard,
     CardForm,
-  }
+  },
 };
 
 </script>

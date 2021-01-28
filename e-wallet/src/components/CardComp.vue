@@ -51,6 +51,10 @@ export default {
       for (let i=0;i<this.$root.$data.wallet.length;i++) {
           if (inp == this.$root.$data.wallet[i].id) {
               this.$root.$data.dValues.def_holder=this.$root.$data.wallet[i].holder;
+              this.$root.$data.dValues.def_vendor=this.$root.$data.wallet[i].vendor;
+              this.$root.$data.dValues.def_number=this.$root.$data.wallet[i].number;
+              this.$root.$data.dValues.def_validMonth=this.$root.$data.wallet[i].validMonth;
+              this.$root.$data.dValues.def_validDay=this.$root.$data.wallet[i].validDay;
           }
           
       }

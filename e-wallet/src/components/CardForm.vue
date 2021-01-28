@@ -32,14 +32,7 @@
         <span>
           <label for="year">YEAR</label>
           <select value="year" class="formField" v-model="year" v-on:change="writeYear(year)">
-            <option value="21">21</option>
-            <option value="22">22</option>
-            <option value="23">23</option>
-            <option value="24">24</option>
-            <option value="25">25</option>
-            <option value="26">26</option>
-            <option value="27">27</option>
-
+            <option v-for="artal in yearList" :key="artal" v-bind:value="artal">{{artal}}</option>
           </select>
           
         </span>
@@ -53,9 +46,17 @@
           </select>
         </span>
 
+        
         <button class="routerButton" v-on:click="addCard">ADD CARD</button>
-      </div>
+        
 
+      <p v-show="show">
+        <button @click="show = !show">Click</button>
+        show hide
+        </p>
+        
+        
+      </div>
     
 </template>
 
@@ -71,9 +72,20 @@ export default {
     month: "",
     year: "",
     vend: "",
+    show: true,
+    yearList: [],
     pathShort: this.$root.$data.dValues,
   }},
+  mounted() {
+    this.addYears()
+  },
   methods: {
+    addYears() {
+      let y = new Date().getFullYear();
+      for (let i=y;i<y+20;i++) {
+        this.yearList.push(i);
+      }
+    },
     writeInfo(from) {
         this.pathShort.def_number=from;
     },
@@ -91,8 +103,8 @@ export default {
         this.$root.$data.dValues.def_holder=this.namn;
     },
     addCard() {
-      var d = new Date().getTime();
-      alert(d);
+      let d = new Date().getTime();
+      //alert(d);
       this.$root.$data.wallet.push({id: d,holder: this.namn,vendor: this.vend,number: this.cnum,validMonth: this.month,validDay: this.year})
       this.$router.push('/')
     },
