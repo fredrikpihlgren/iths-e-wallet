@@ -10,10 +10,12 @@
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
 
 :root {
   background-color: #FFF;
   --myFont: Verdana, Helvetica, sans-serif;
+  --cardFont: 'Inconsolata', monospace;
   --blackcol:rgba(0,0,0,0.8);
   --whitecol:rgba(255,255,255,0.8);
 }
@@ -68,24 +70,25 @@ margin-right:auto;
   box-sizing:border-box;
   margin:0;
   width:50%;
-  height:50%;
+  height:60%;
 }
 .cardStyle > div:nth-child(1) {
   width:100%;
+  height:40%;
 }
 .cardStyle > div:nth-child(2) {
   text-align:center;
   width:100%;
-  height:15%;
+  height:20%;
 }
 .cardStyle > div:nth-child(3) {
   width:70%;
-  height:35%;
+  height:30%;
   padding-left:5%;
 }
 .cardStyle > div:nth-child(4) {
   width:30%;
-  height:35%;
+  height:30%;
   padding-right:5%;
   text-align:right;
 }
@@ -111,8 +114,9 @@ margin-top:80px;
   margin-right:auto;
   margin-top:15px;
   margin-bottom:15px;
-  font-weight:900;
-  font-size:30px;
+  font-size:2rem;
+  font-family: var(--myFont);
+  font-weight:700;
   cursor:pointer;
   text-decoration:none;
   color:black;

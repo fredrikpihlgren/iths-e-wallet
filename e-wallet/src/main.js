@@ -22,7 +22,7 @@ new Vue({
       wallet: [
         {
           id: "567",
-          holder: "Bulba Saur",
+          holder: "Rutger Bibelsson",
           vendor: "bitcoin",
           number: "1234567890000",
           validMonth: "12",
@@ -55,6 +55,25 @@ new Vue({
         },
         */
       ]
+    }
+  },
+  methods: {
+    lastData() {
+      let wLength=this.wallet.length-1;
+      this.dValues.def_id=this.wallet[wLength].id;
+      this.dValues.def_holder=this.wallet[wLength].holder;
+      this.dValues.def_vendor=this.wallet[wLength].vendor;
+      this.dValues.def_number=this.wallet[wLength].number;
+      this.dValues.def_validMonth=this.wallet[wLength].validMonth;
+      this.dValues.def_validDay=this.wallet[wLength].validDay;
+    },
+    blankData() {
+      this.dValues.def_id="";
+      this.dValues.def_holder="";
+      this.dValues.def_vendor="";
+      this.dValues.def_number="";
+      this.dValues.def_validMonth="";
+      this.dValues.def_validDay="";
     }
   },
   render: h => h(App)

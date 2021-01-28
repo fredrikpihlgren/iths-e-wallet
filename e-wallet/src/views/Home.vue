@@ -31,6 +31,9 @@ export default {
     ShowCard,
     CardStack,
   },
+  mounted() {
+    this.$root.lastData();
+  },
   methods: {
     resetme() {
       //if () {

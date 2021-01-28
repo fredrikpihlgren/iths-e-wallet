@@ -50,10 +50,10 @@
         <button class="routerButton" v-on:click="addCard">ADD CARD</button>
         
 
-      <p v-show="show">
+        <!--<p v-show="show">
         <button @click="show = !show">Click</button>
         show hide
-        </p>
+        </p>-->
         
         
       </div>
@@ -78,6 +78,7 @@ export default {
   }},
   mounted() {
     this.addYears()
+    this.$root.blankData();
   },
   methods: {
     addYears() {
@@ -131,13 +132,17 @@ label {
   width:100%;
   font-size:1.5rem;
   color:rgba(0,0,0,0.8);
+  font-family: var(--cardFont);
+  font-weight:700;
 }
 
 .formField {
   width:90%;
   border:2px solid black;
   border-radius:10px;
-  font-size:2.5rem;
+  font-size:2rem;
+  font-family: var(--myFont);
+  font-weight:400;
   color:rgba(0,0,0,0.8);
   outline:0;
   box-sizing: border-box;

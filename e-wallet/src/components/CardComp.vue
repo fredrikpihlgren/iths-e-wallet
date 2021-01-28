@@ -1,9 +1,9 @@
 <template>
   <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)"> <!-- v-on:click="greet" -->
     <div></div>
-    <div>{{cardnumberSplit}}</div>
-    <div><p>CARDHOLDER NAME</p><p>{{name}}</p></div>
-    <div><p>VALID THRU</p><p>{{month +"/"+ year}}</p></div>
+    <div class="numbertxt">{{cardnumberSplit}}</div>
+    <div><p class="rubrik">CARDHOLDER NAME</p><p class="brodtext">{{name}}</p></div>
+    <div><p class="rubrik">VALID THRU</p><p class="brodtext">{{month +"/"+ year}}</p></div>
   </div>
 </template>
 
@@ -74,4 +74,29 @@ export default {
 </script>
 
 
+<style scoped>
 
+
+div {
+  font-family: var(--cardFont);
+  color:black;
+}
+.numbertxt {
+  font-size:3rem;
+  font-weight:900;
+  margin:0;
+  padding:0;
+}
+.rubrik {
+  font-size:1.4rem;
+  margin:0;
+  padding:0;
+}
+.brodtext {
+  font-size:2rem;
+  font-weight:900;
+  margin:0;
+  padding:0;
+}
+
+</style>
