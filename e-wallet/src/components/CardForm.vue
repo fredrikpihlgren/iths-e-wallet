@@ -49,21 +49,12 @@
         
         <button class="routerButton" v-on:click="addCard">ADD CARD</button>
         
-
-        <!--
-        <button @click="show = !show">Click</button>
-        <p v-show="show">
-        show hide
-        </p>
-        -->
-        
         
       </div>
     
 </template>
 
 <script>
-//this.$root.$data.dValues.def_holder
 export default {
   data() { return {
     cardid: "",
@@ -95,17 +86,6 @@ export default {
         else if (to == "C") {this.pathShort.def_validDay=from;}
         else if (to == "D") {this.pathShort.def_vendor=from;}
     },
-    /*
-    writeMonth(from) {
-        this.pathShort.def_validMonth=from;
-    },
-    writeYear(from) {
-        this.pathShort.def_validDay=from;
-    },
-    writeVendor(from) {
-        this.pathShort.def_vendor=from;
-    },
-    */
     mergeNamnx() {
         this.namn=this.fnamn +" "+ this.enamn;
         this.$root.$data.dValues.def_holder=this.namn;

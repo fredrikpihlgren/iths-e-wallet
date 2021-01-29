@@ -13,14 +13,9 @@
       v-bind:clickable="true"
       v-bind:visible="item.visible"
       />
-
-
-        <!--<ShowCard v-for="item in wallet" :key="item.length" />
-        {{this.$root.$data.wallet}}-->
         
       </div>
 
-      <!-- {{ item.message }} -->
 </template>
 
 <script>

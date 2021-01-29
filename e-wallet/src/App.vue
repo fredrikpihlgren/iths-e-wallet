@@ -2,8 +2,6 @@
   <div class="wrapper">
       <!--<router-link to="/">Cards</router-link> -->
       <!--<router-link to="/newcard">New Card</router-link>-->
-      <!--{{this.$root.$data.wallet[0]}}-->
-      <!--{{this.$root.$data.wallet}}-->
     <router-view />
   </div>
 </template>

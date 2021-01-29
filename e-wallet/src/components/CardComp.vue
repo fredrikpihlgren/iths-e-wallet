@@ -1,5 +1,5 @@
 <template>
-  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)" v-show="hideCard(cardId)"> <!-- v-on:click="greet" --> <!--v-show="visible"-->
+  <div class="cardStyle" v-bind:class="computedClass" v-on:click="displayCard(cardId)" v-show="hideCard(cardId)">
     <div></div>
     <div class="numbertxt">{{cardnumberSplit}}</div>
     <div><p class="rubrik">CARDHOLDER NAME</p><p class="brodtext">{{name}}</p></div>
@@ -14,7 +14,6 @@ export default {
   computed: {
     cardnumberSplit: function () {
       return this.cnumber.substring(0,4) +" "+ this.cnumber.substring(4,8) +" "+ this.cnumber.substring(8,12) +" "+ this.cnumber.substring(12,16)
-      //{{cardnumber.substring(0,4) +" "+ cardnumber.substring(4,8) +" "+ cardnumber.substring(8,12) +" "+ cardnumber.substring(12,16)}}
     },
     computedClass() {
       let className = '';
@@ -47,10 +46,8 @@ export default {
           
         return dShow;
     },
-    test(inp) {
+    displayCard(inp) {
       if (this.clickable) {
-        //this.$root.cardsVisible();
-      //this.visible = !this.visible;
       this.$root.$data.currentCard=inp;
       this.$root.$data.showKill=false;
       for (let i=0;i<this.$root.$data.wallet.length;i++) {

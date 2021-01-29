@@ -26,7 +26,7 @@ new Vue({
           id: "567",
           holder: "Rutger Bibelsson",
           vendor: "bitcoin",
-          number: "1234567890000",
+          number: "1234567890000000",
           validMonth: "12",
           validDay: "5",
           visible: true,
