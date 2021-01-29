@@ -1,5 +1,5 @@
 <template>
-  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)"> <!-- v-on:click="greet" -->
+  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)"> <!-- v-on:click="greet" --> <!--v-show="visible"-->
     <div></div>
     <div class="numbertxt">{{cardnumberSplit}}</div>
     <div><p class="rubrik">CARDHOLDER NAME</p><p class="brodtext">{{name}}</p></div>
@@ -11,15 +11,6 @@
 <script>
 export default {
 
-  data() { return {
-        cardnumber: "1234567891011123",
-        firstname: "John",
-        lastname: "Doe",
-        //month: 12,
-        //year: 22,
-        //vendor: "",
-  }
-  },
   computed: {
     cardnumberSplit: function () {
       return this.cnumber.substring(0,4) +" "+ this.cnumber.substring(4,8) +" "+ this.cnumber.substring(8,12) +" "+ this.cnumber.substring(12,16)
@@ -43,11 +34,17 @@ export default {
     month: String,
     year: String,
     cardId: String,
+    clickable: Boolean,
+    visible: Boolean,
   },
   methods: {
     test(inp) {
-      alert(inp);
+      if (this.clickable) {
+        alert(inp);
+        //this.$root.cardsVisible();
+      //this.visible = !this.visible;
       this.$root.$data.currentCard=inp;
+      this.$root.$data.showKill=false;
       for (let i=0;i<this.$root.$data.wallet.length;i++) {
           if (inp == this.$root.$data.wallet[i].id) {
               this.$root.$data.dValues.def_holder=this.$root.$data.wallet[i].holder;
@@ -59,6 +56,7 @@ export default {
           
       }
       //console.log(inp);
+      }
     },
     /*
     greet: function() {

@@ -2,7 +2,7 @@
       <div class="formwrapper">
         <span>
           <label for="cardnum">CARD NUMBER</label>
-          <input type="text" value="cardnum" maxlength="16" class="formField" v-model="cnum" v-on:input="writeInfo(cnum)">
+          <input type="text" value="cardnum" maxlength="16" class="formField" v-model="cnum" v-on:input="writeInfo($event,cnum,'A')">
         </span>
         <span>
           <label for="fnamn">FIRST NAME</label>
@@ -14,7 +14,7 @@
         </span>
         <span>
           <label for="months">MONTH</label>
-          <select value="months" class="formField" v-model="month" v-on:change="writeMonth(month)">
+          <select value="months" class="formField" v-model="month" v-on:change="writeInfo($event,month,'B')">
             <option value="1" selected>January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -31,14 +31,14 @@
         </span>
         <span>
           <label for="year">YEAR</label>
-          <select value="year" class="formField" v-model="year" v-on:change="writeYear(year)">
+          <select value="year" class="formField" v-model="year" v-on:change="writeInfo($event,year,'C')">
             <option v-for="artal in yearList" :key="artal" v-bind:value="artal">{{artal}}</option>
           </select>
           
         </span>
         <span>
           <label for="vend">VENDOR</label>
-          <select value="vend" class="formField" v-model="vend" v-on:change="writeVendor(vend)">
+          <select value="vend" class="formField" v-model="vend" v-on:change="writeInfo($event,vend,'D')">
             <option value="bitcoin">Bitcoin Inc</option>
             <option value="ninja">Ninja Bank</option>
             <option value="blockchain">Block Chain Inc</option>
@@ -50,10 +50,11 @@
         <button class="routerButton" v-on:click="addCard">ADD CARD</button>
         
 
-        <!--<p v-show="show">
+        
         <button @click="show = !show">Click</button>
+        <p v-show="show">
         show hide
-        </p>-->
+        </p>
         
         
       </div>
@@ -87,9 +88,13 @@ export default {
         this.yearList.push(i);
       }
     },
-    writeInfo(from) {
-        this.pathShort.def_number=from;
+    writeInfo(nada, from, to) {
+        if (to == "A") {this.pathShort.def_number=from;}
+        else if (to == "B") {this.pathShort.def_validMonth=from;}
+        else if (to == "C") {this.pathShort.def_validDay=from;}
+        else if (to == "D") {this.pathShort.def_vendor=from;}
     },
+    /*
     writeMonth(from) {
         this.pathShort.def_validMonth=from;
     },
@@ -99,13 +104,14 @@ export default {
     writeVendor(from) {
         this.pathShort.def_vendor=from;
     },
+    */
     mergeNamnx() {
         this.namn=this.fnamn +" "+ this.enamn;
         this.$root.$data.dValues.def_holder=this.namn;
     },
     addCard() {
       let d = new Date().getTime();
-      //alert(d);
+      this.$root.$data.showKill=false;
       this.$root.$data.wallet.push({id: d,holder: this.namn,vendor: this.vend,number: this.cnum,validMonth: this.month,validDay: this.year})
       this.$router.push('/')
     },

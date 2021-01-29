@@ -22,7 +22,6 @@
 
 .wrapper {
 display:block;
-background-color:red;
 width:550px;
 min-height:400px;
 margin-left:auto;
@@ -45,6 +44,7 @@ margin-right:auto;
   background-image: url('./assets/chip-dark.svg'), url('./assets/vendor-bitcoin.svg');
   background-repeat: no-repeat;
   background-position: 20px 30px, 95% 30px;
+  position: sticky;
 }
 .c-Bitcoin {
   background-color: #FFB445;
@@ -97,7 +97,7 @@ margin-right:auto;
 margin-top:80px;
 }
 .cardMargins {
-  margin-top:15px;
+  margin-top:15px; /* 15px, -200px */
   margin-bottom:15px;
 }
 

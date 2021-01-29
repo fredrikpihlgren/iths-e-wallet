@@ -8,6 +8,7 @@
       v-bind:cnumber="this.$root.$data.dValues.def_number"
       v-bind:month="this.$root.$data.dValues.def_validMonth"
       v-bind:year="this.$root.$data.dValues.def_validDay"
+      v-bind:visible="true"
     />
     <CardForm />
   </div>

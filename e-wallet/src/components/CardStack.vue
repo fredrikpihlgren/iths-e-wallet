@@ -10,7 +10,10 @@
       v-bind:month="item.validMonth"
       v-bind:year="item.validDay"
       v-bind:cardId="item.id"
+      v-bind:clickable="true"
+      v-bind:visible="item.visible"
       />
+
 
         <!--<ShowCard v-for="item in wallet" :key="item.length" />
         {{this.$root.$data.wallet}}-->
@@ -26,7 +29,7 @@ import ShowCard from "@/components/CardComp.vue";
 export default {
   components: {
     ShowCard,
-  }
+  },
 };
 </script>
 

@@ -11,13 +11,15 @@ new Vue({
   data: function(){
     return {
       currentCard: "123",
+      showKill: false,
       dValues: {
-          def_id: "123",
+          def_id: "0",
           def_holder: "Default Name",
           def_vendor: "",
           def_number: "XXXXYYYYZZZZFFFF",
           def_validMonth: "8",
           def_validDay: "9",
+          visible: true,
       },
       wallet: [
         {
@@ -26,7 +28,8 @@ new Vue({
           vendor: "bitcoin",
           number: "1234567890000",
           validMonth: "12",
-          validDay: "5"
+          validDay: "5",
+          visible: true,
         },
         {
           id: "897",
@@ -34,7 +37,8 @@ new Vue({
           vendor: "ninja",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
-          validDay: "8"
+          validDay: "8",
+          visible: true,
         },
         /*
         {
@@ -43,7 +47,8 @@ new Vue({
           vendor: "blockchain",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
-          validDay: "5"
+          validDay: "5",
+          visible: true,
         },
         {
           id: "432984728397",
@@ -51,10 +56,11 @@ new Vue({
           vendor: "evil",
           number: "XXXXYYYYZZZZFFFF",
           validMonth: "12",
-          validDay: "22"
+          validDay: "22",
+          visible: true,
         },
         */
-      ]
+      ],
     }
   },
   methods: {
@@ -66,14 +72,22 @@ new Vue({
       this.dValues.def_number=this.wallet[wLength].number;
       this.dValues.def_validMonth=this.wallet[wLength].validMonth;
       this.dValues.def_validDay=this.wallet[wLength].validDay;
+      this.currentCard=this.wallet[wLength].id;
     },
     blankData() {
-      this.dValues.def_id="";
+      this.dValues.def_id="0";
       this.dValues.def_holder="";
       this.dValues.def_vendor="";
       this.dValues.def_number="";
       this.dValues.def_validMonth="";
       this.dValues.def_validDay="";
+      this.CurrentCard="";
+    },
+    cardsVisible() {
+      for (let i=0;i<this.wallet.length;i++) {
+        this.wallet[i].visible=true;
+        //if (this.wallet[i].id == hideId) {this.wallet[i].visible=false;}
+      }
     }
   },
   render: h => h(App)
