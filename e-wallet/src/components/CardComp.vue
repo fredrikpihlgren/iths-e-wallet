@@ -1,5 +1,5 @@
 <template>
-  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)"> <!-- v-on:click="greet" --> <!--v-show="visible"-->
+  <div class="cardStyle" v-bind:class="computedClass" v-on:click="test(cardId)" v-show="hideCard(cardId)"> <!-- v-on:click="greet" --> <!--v-show="visible"-->
     <div></div>
     <div class="numbertxt">{{cardnumberSplit}}</div>
     <div><p class="rubrik">CARDHOLDER NAME</p><p class="brodtext">{{name}}</p></div>
@@ -38,9 +38,17 @@ export default {
     visible: Boolean,
   },
   methods: {
+    hideCard(hideId) {
+        let dShow=true;
+        if (hideId == this.$root.$data.currentCard) {
+          dShow=false;
+        }
+        if (!this.clickable) {dShow=true;}
+          
+        return dShow;
+    },
     test(inp) {
       if (this.clickable) {
-        alert(inp);
         //this.$root.cardsVisible();
       //this.visible = !this.visible;
       this.$root.$data.currentCard=inp;
@@ -55,16 +63,8 @@ export default {
           }
           
       }
-      //console.log(inp);
       }
     },
-    /*
-    greet: function() {
-      this.yoda++;
-      if (this.yoda > 4) {this.yoda=0;}
-      //alert(this.yoda);
-    }
-    */
 
   }
 }

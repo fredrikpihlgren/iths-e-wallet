@@ -50,11 +50,12 @@
         <button class="routerButton" v-on:click="addCard">ADD CARD</button>
         
 
-        
+        <!--
         <button @click="show = !show">Click</button>
         <p v-show="show">
         show hide
         </p>
+        -->
         
         
       </div>
@@ -84,7 +85,7 @@ export default {
   methods: {
     addYears() {
       let y = new Date().getFullYear();
-      for (let i=y;i<y+20;i++) {
+      for (let i=y-2000;i<y+20;i++) {
         this.yearList.push(i);
       }
     },

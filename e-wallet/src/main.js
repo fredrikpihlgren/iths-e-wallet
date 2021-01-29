@@ -40,9 +40,8 @@ new Vue({
           validDay: "8",
           visible: true,
         },
-        /*
         {
-          id: "432984728397",
+          id: "456",
           holder: "Vladimir Putin",
           vendor: "blockchain",
           number: "XXXXYYYYZZZZFFFF",
@@ -51,7 +50,7 @@ new Vue({
           visible: true,
         },
         {
-          id: "432984728397",
+          id: "789",
           holder: "Patrick Bateman",
           vendor: "evil",
           number: "XXXXYYYYZZZZFFFF",
@@ -59,7 +58,7 @@ new Vue({
           validDay: "22",
           visible: true,
         },
-        */
+        
       ],
     }
   },

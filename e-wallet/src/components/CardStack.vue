@@ -33,3 +33,13 @@ export default {
 };
 </script>
 
+<style scoped>
+
+.cardMargins {
+  margin-top:-200px;
+}
+.topCard {
+  margin-top:260px;
+}
+
+</style>

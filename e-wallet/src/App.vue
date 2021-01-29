@@ -26,6 +26,7 @@ width:550px;
 min-height:400px;
 margin-left:auto;
 margin-right:auto;
+margin-bottom:100px;
 }
 
 .cardStyle {
@@ -46,6 +47,7 @@ margin-right:auto;
   background-position: 20px 30px, 95% 30px;
   position: sticky;
 }
+
 .c-Bitcoin {
   background-color: #FFB445;
 }
